@@ -4,14 +4,14 @@ import requests from './requests';
 import axios from './axios';
 
 function Banner() {
-    const [movie, setMovies] = useState([]);
+    const [movie, setMovie] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
         const request = await axios.get(requests.fetchNetflixOriginals);
 
         const randomIndex = Math.floor(Math.random() * request.data.results.length);
-        setMovies(request.data.results[randomIndex]);
+        setMovie(request.data.results[randomIndex]);
         console.log(movie);
 
         return request;
